@@ -280,8 +280,14 @@ public class CDThequeManager {
 		private static void rechercheParISBN(CDTheque cds) {
 			CDAudio cdTrouve; // le CD recherché
 			long iSBN;
-
 	        // TODO
+			if(cds.rechercherCD(iSBN) != null) {
+				System.out.println("Votre cd est présent dans la CDTheque.");
+			}
+			else {
+				System.out.println("Votre cd n'est pas présent dans la CDTheque.");
+
+			}
 		}
 
 		/**
@@ -295,6 +301,12 @@ public class CDThequeManager {
 			String titre;
 		
 	        //TODO
+			if(cds.getCDparArtisteTitre(artiste, titre) != null) {
+				System.out.println("Votre cd est présent dans la CDTheque");
+			}
+			else {
+				System.out.println("Votre cd n'est pas présent dans la CDTheque.");
+			}
 		}
 		
 		/**
@@ -308,6 +320,12 @@ public class CDThequeManager {
 			String titre;
 		
 	     // TODO
+			if(cds.getCDparStyleTitre(style, titre) != null) {
+				System.out.println("Votre cd est présent dans la CDTheque");
+			}
+			else {
+				System.out.println("Votre cd n'est pas présent dans la CDTheque.");
+			}
 		}
 
 		/**

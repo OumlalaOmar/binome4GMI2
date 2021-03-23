@@ -29,8 +29,6 @@ public class CDTheque implements Iterable<CDAudio> {
 		// TODO
 	}
 	
-	
-   
 	public List<CDAudio> getCatalogue() {
 		return catalogue;
 	}
@@ -166,9 +164,17 @@ public class CDTheque implements Iterable<CDAudio> {
 	 * CDThèque, null sinon
 	 */
 	public CDAudio rechercherCD(long iSBN) {
-
-		// TODO
-		this.cd
+		CDAudio cd = null;
+		for(int i=0;i<catalogue.size();i++) {
+			if(iSBN == this.catalogue.get(i).getISBN()) {
+				cd=this.catalogue.get(i);
+				break;
+			}
+			else {
+				cd=null;
+			}
+		}
+		return cd;
 	}
 
 	/**
@@ -179,8 +185,18 @@ public class CDTheque implements Iterable<CDAudio> {
 	 * CDThèque, null sinon
 	 */
 	public CDAudio getCDparArtisteTitre(String artiste, String titre) {
-		
+		CDAudio cd=null;
 		// TODO
+		for(int i=0;i<catalogue.size();i++) {
+			if(artiste == this.catalogue.get(i).getArtiste() && titre == this.catalogue.get(i).getTitre()) {
+				cd=this.catalogue.get(i);
+				break;
+			}
+			else {
+				cd=null;
+			}
+		}
+		return cd;
 	}
 	
 	/**
@@ -191,8 +207,18 @@ public class CDTheque implements Iterable<CDAudio> {
 	 * dans la CDThèque, null sinon
 	 */
 	public CDAudio getCDparStyleTitre(String style, String titre) {
-		
+		CDAudio cd=null;
 		// TODO
+		for(int i=0;i<catalogue.size();i++) {
+			if(style == this.catalogue.get(i).getStyle() && titre == this.catalogue.get(i).getTitre()) {
+				cd=this.catalogue.get(i);
+				break;
+			}
+			else {
+				cd=null;
+			}
+		}
+		return cd;
 	}
 
 	/**
